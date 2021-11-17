@@ -1,0 +1,782 @@
+{
+  "cells": [
+    {
+      "shape": "org-edge",
+      "zIndex": 0,
+      "id": "87308569-7e0b-4338-9e6a-db87c16a46ba",
+      "parent": "42a8673e-6e90-45bd-a735-4aeeb8f66979",
+      "source": { "cell": "42a8673e-6e90-45bd-a735-4aeeb8f66979" },
+      "target": { "cell": "db841589-5886-4253-8e6d-7cfaa8cf52e8" },
+      "vertices": [
+        { "x": 225, "y": 122 },
+        { "x": 225, "y": 69 }
+      ]
+    },
+    {
+      "shape": "org-edge",
+      "zIndex": 0,
+      "id": "ea351d9f-0308-49b0-82a5-600922db658b",
+      "parent": "42a8673e-6e90-45bd-a735-4aeeb8f66979",
+      "source": { "cell": "42a8673e-6e90-45bd-a735-4aeeb8f66979" },
+      "target": { "cell": "ecc0d3ca-3ab4-4f28-a703-4e06f9a81eed" },
+      "vertices": [
+        { "x": 225, "y": 122 },
+        { "x": 225, "y": 175 }
+      ]
+    },
+    {
+      "shape": "org-edge",
+      "zIndex": 0,
+      "id": "8cd9344f-7acd-4a62-b0bd-c643d2cf1798",
+      "parent": "42cc1d37-624b-4452-8ec4-cad793eab1fa",
+      "source": { "cell": "f184dfd1-be4d-4fcd-9efd-b033209cbbc1" },
+      "target": { "cell": "42cc1d37-624b-4452-8ec4-cad793eab1fa" },
+      "vertices": [
+        { "x": 679, "y": 69 },
+        { "x": 679, "y": 122 }
+      ]
+    },
+    {
+      "shape": "org-edge",
+      "zIndex": 0,
+      "id": "3177f67f-6828-4fd2-836c-a008ff5c4f8c",
+      "parent": "42cc1d37-624b-4452-8ec4-cad793eab1fa",
+      "source": { "cell": "2a67665f-dfef-4db7-a3ab-42e6ab105ca5" },
+      "target": { "cell": "42cc1d37-624b-4452-8ec4-cad793eab1fa" },
+      "vertices": [
+        { "x": 679, "y": 175 },
+        { "x": 679, "y": 122 }
+      ]
+    },
+    {
+      "shape": "edge",
+      "attrs": {
+        "line": {
+          "stroke": "#5F95FF",
+          "strokeWidth": 1,
+          "targetMarker": { "name": "classic", "size": 8 }
+        }
+      },
+      "id": "84302efa-bde8-4170-ac3f-b5440182a029",
+      "zIndex": 0,
+      "source": {
+        "cell": "db841589-5886-4253-8e6d-7cfaa8cf52e8",
+        "port": "d23805c3-83b9-4321-ab6e-c2397a492c68"
+      },
+      "target": {
+        "cell": "f184dfd1-be4d-4fcd-9efd-b033209cbbc1",
+        "port": "2fa75a62-03fe-42f8-8dd4-adbcd2a33483"
+      },
+      "vertices": []
+    },
+    {
+      "shape": "edge",
+      "attrs": {
+        "line": {
+          "stroke": "#5F95FF",
+          "strokeWidth": 1,
+          "targetMarker": { "name": "classic", "size": 8 }
+        }
+      },
+      "id": "846664c3-f764-4a47-9769-26971d6d312c",
+      "zIndex": 0,
+      "source": {
+        "cell": "ecc0d3ca-3ab4-4f28-a703-4e06f9a81eed",
+        "port": "d927d669-86df-435a-93ad-fa503f6d661d"
+      },
+      "target": {
+        "cell": "2a67665f-dfef-4db7-a3ab-42e6ab105ca5",
+        "port": "6239e950-0a1f-4ddf-a398-76d0c24f63ad"
+      },
+      "vertices": []
+    },
+    {
+      "shape": "edge",
+      "attrs": {
+        "line": {
+          "stroke": "#5F95FF",
+          "strokeWidth": 1,
+          "targetMarker": { "name": "classic", "size": 8 }
+        }
+      },
+      "id": "c3202927-4af3-435d-9558-11825d9b3e50",
+      "zIndex": 0,
+      "source": {
+        "cell": "42cc1d37-624b-4452-8ec4-cad793eab1fa",
+        "port": "442463bf-c192-4030-bf03-0f00d5fb03f9"
+      },
+      "target": {
+        "cell": "d86914d3-8591-4a5e-8e93-ccb74333780d",
+        "port": "041a25da-f0c9-464c-bfb7-6e10acd3345d"
+      },
+      "vertices": []
+    },
+    {
+      "shape": "org-edge",
+      "zIndex": 0,
+      "id": "9671022b-00af-4d60-a8ec-a5e831f88e24",
+      "parent": "2b451eb6-186b-4563-862b-3dd1936f90f3",
+      "source": { "cell": "1900d8d5-8336-4b8c-8d52-15f1446d65e7" },
+      "target": { "cell": "2b451eb6-186b-4563-862b-3dd1936f90f3" },
+      "vertices": [
+        { "x": 1379, "y": 79 },
+        { "x": 1379, "y": 132 }
+      ]
+    },
+    {
+      "shape": "org-edge",
+      "zIndex": 0,
+      "id": "326b8062-d5c6-484e-bdab-f8d427c5805f",
+      "parent": "2b451eb6-186b-4563-862b-3dd1936f90f3",
+      "source": { "cell": "e6eacc13-5b24-4118-ad76-c3ab6f28967e" },
+      "target": { "cell": "2b451eb6-186b-4563-862b-3dd1936f90f3" },
+      "vertices": [
+        { "x": 1379, "y": 185 },
+        { "x": 1379, "y": 132 }
+      ]
+    },
+    {
+      "shape": "edge",
+      "attrs": {
+        "line": {
+          "stroke": "#5F95FF",
+          "strokeWidth": 1,
+          "targetMarker": { "name": "classic", "size": 8 }
+        }
+      },
+      "id": "fdafe393-ddf8-42e3-9807-ae50eb33aff9",
+      "zIndex": 0,
+      "source": {
+        "cell": "d86914d3-8591-4a5e-8e93-ccb74333780d",
+        "port": "5dc273e1-1afd-47e1-a5f1-db8401256049"
+      },
+      "target": {
+        "cell": "1900d8d5-8336-4b8c-8d52-15f1446d65e7",
+        "port": "b8f19a71-e8dc-4fc2-a47e-9ac2f3e5533d"
+      }
+    },
+    {
+      "position": { "x": 10, "y": 100 },
+      "size": { "width": 154, "height": 44 },
+      "view": "react-shape-view",
+      "shape": "ais-rect-port",
+      "highlight": true,
+      "portMarkup": [{ "tagName": "circle", "selector": "portBody" }],
+      "ports": {
+        "items": [
+          {
+            "group": "in",
+            "id": "55fdcf5b-fd5c-49ec-9d7d-1952a7c57168"
+          },
+          {
+            "group": "out",
+            "id": "46fce3de-c5d7-44d8-8969-7baa03be78ce"
+          }
+        ],
+        "groups": {
+          "in": {
+            "position": { "name": "left" },
+            "attrs": {
+              "portBody": {
+                "magnet": "passive",
+                "r": 3,
+                "stroke": "#ffa940",
+                "fill": "#fff",
+                "strokeWidth": 1
+              }
+            }
+          },
+          "out": {
+            "position": { "name": "right" },
+            "attrs": {
+              "portBody": {
+                "magnet": true,
+                "r": 3,
+                "fill": "#fff",
+                "stroke": "#3199FF",
+                "strokeWidth": 1
+              }
+            }
+          }
+        }
+      },
+      "id": "42a8673e-6e90-45bd-a735-4aeeb8f66979",
+      "component": {
+        "key": null,
+        "ref": null,
+        "props": {},
+        "_owner": null,
+        "_store": {}
+      },
+      "data": {
+        "type": "device",
+        "props": {
+          "id": "id4",
+          "name": "设备4",
+          "value": ["00", "77", "999"]
+        },
+        "group": "in",
+        "initCom": true
+      },
+      "zIndex": 1,
+      "children": [
+        "db841589-5886-4253-8e6d-7cfaa8cf52e8",
+        "ecc0d3ca-3ab4-4f28-a703-4e06f9a81eed",
+        "87308569-7e0b-4338-9e6a-db87c16a46ba",
+        "ea351d9f-0308-49b0-82a5-600922db658b"
+      ]
+    },
+    {
+      "position": { "x": 260, "y": 50 },
+      "size": { "width": 154, "height": 44 },
+      "view": "react-shape-view",
+      "shape": "ais-rect-port",
+      "highlight": true,
+      "portMarkup": [{ "tagName": "circle", "selector": "portBody" }],
+      "ports": {
+        "items": [
+          {
+            "group": "in",
+            "id": "bd6ae53e-2f90-4e7d-9732-ec328aebc2ba"
+          },
+          {
+            "group": "out",
+            "id": "d23805c3-83b9-4321-ab6e-c2397a492c68"
+          }
+        ],
+        "groups": {
+          "in": {
+            "position": { "name": "left" },
+            "attrs": {
+              "portBody": {
+                "magnet": "passive",
+                "r": 3,
+                "stroke": "#ffa940",
+                "fill": "#fff",
+                "strokeWidth": 1
+              }
+            }
+          },
+          "out": {
+            "position": { "name": "right" },
+            "attrs": {
+              "portBody": {
+                "magnet": true,
+                "r": 3,
+                "fill": "#fff",
+                "stroke": "#3199FF",
+                "strokeWidth": 1
+              }
+            }
+          }
+        }
+      },
+      "id": "db841589-5886-4253-8e6d-7cfaa8cf52e8",
+      "component": {
+        "key": null,
+        "ref": null,
+        "props": {},
+        "_owner": null,
+        "_store": {}
+      },
+      "data": { "value": "00", "type": "case", "initCom": true },
+      "zIndex": 2,
+      "parent": "42a8673e-6e90-45bd-a735-4aeeb8f66979"
+    },
+    {
+      "position": { "x": 260, "y": 150 },
+      "size": { "width": 154, "height": 44 },
+      "view": "react-shape-view",
+      "shape": "ais-rect-port",
+      "highlight": true,
+      "portMarkup": [{ "tagName": "circle", "selector": "portBody" }],
+      "ports": {
+        "items": [
+          {
+            "group": "in",
+            "id": "8feee2e8-a763-436c-9139-8fd45205ecef"
+          },
+          {
+            "group": "out",
+            "id": "d927d669-86df-435a-93ad-fa503f6d661d"
+          }
+        ],
+        "groups": {
+          "in": {
+            "position": { "name": "left" },
+            "attrs": {
+              "portBody": {
+                "magnet": "passive",
+                "r": 3,
+                "stroke": "#ffa940",
+                "fill": "#fff",
+                "strokeWidth": 1
+              }
+            }
+          },
+          "out": {
+            "position": { "name": "right" },
+            "attrs": {
+              "portBody": {
+                "magnet": true,
+                "r": 3,
+                "fill": "#fff",
+                "stroke": "#3199FF",
+                "strokeWidth": 1
+              }
+            }
+          }
+        }
+      },
+      "id": "ecc0d3ca-3ab4-4f28-a703-4e06f9a81eed",
+      "component": {
+        "key": null,
+        "ref": null,
+        "props": {},
+        "_owner": null,
+        "_store": {}
+      },
+      "data": { "value": "77", "type": "case", "initCom": true },
+      "zIndex": 3,
+      "parent": "42a8673e-6e90-45bd-a735-4aeeb8f66979"
+    },
+    {
+      "position": { "x": 740, "y": 100 },
+      "size": { "width": 154, "height": 44 },
+      "view": "react-shape-view",
+      "shape": "ais-rect-port",
+      "highlight": true,
+      "portMarkup": [{ "tagName": "circle", "selector": "portBody" }],
+      "ports": {
+        "items": [
+          {
+            "group": "in",
+            "id": "456b5c3a-831e-4ef8-8173-6906be477155"
+          },
+          {
+            "group": "out",
+            "id": "442463bf-c192-4030-bf03-0f00d5fb03f9"
+          }
+        ],
+        "groups": {
+          "in": {
+            "position": { "name": "left" },
+            "attrs": {
+              "portBody": {
+                "magnet": "passive",
+                "r": 3,
+                "stroke": "#ffa940",
+                "fill": "#fff",
+                "strokeWidth": 1
+              }
+            }
+          },
+          "out": {
+            "position": { "name": "right" },
+            "attrs": {
+              "portBody": {
+                "magnet": true,
+                "r": 3,
+                "fill": "#fff",
+                "stroke": "#3199FF",
+                "strokeWidth": 1
+              }
+            }
+          }
+        }
+      },
+      "id": "42cc1d37-624b-4452-8ec4-cad793eab1fa",
+      "component": {
+        "key": null,
+        "ref": null,
+        "props": {},
+        "_owner": null,
+        "_store": {}
+      },
+      "data": {
+        "type": "model",
+        "props": {
+          "id": "id3",
+          "name": "模型1",
+          "value": ["模型参数1", "模型参数2"]
+        },
+        "group": "model",
+        "initCom": true
+      },
+      "zIndex": 4,
+      "children": [
+        "f184dfd1-be4d-4fcd-9efd-b033209cbbc1",
+        "2a67665f-dfef-4db7-a3ab-42e6ab105ca5",
+        "8cd9344f-7acd-4a62-b0bd-c643d2cf1798",
+        "3177f67f-6828-4fd2-836c-a008ff5c4f8c"
+      ]
+    },
+    {
+      "position": { "x": 450, "y": 50 },
+      "size": { "width": 154, "height": 44 },
+      "view": "react-shape-view",
+      "shape": "ais-rect-port",
+      "highlight": true,
+      "portMarkup": [{ "tagName": "circle", "selector": "portBody" }],
+      "ports": {
+        "items": [
+          {
+            "group": "in",
+            "id": "2fa75a62-03fe-42f8-8dd4-adbcd2a33483"
+          },
+          {
+            "group": "out",
+            "id": "3c5af80a-9d01-4cbc-abd2-42c70491c166"
+          }
+        ],
+        "groups": {
+          "in": {
+            "position": { "name": "left" },
+            "attrs": {
+              "portBody": {
+                "magnet": "passive",
+                "r": 3,
+                "stroke": "#ffa940",
+                "fill": "#fff",
+                "strokeWidth": 1
+              }
+            }
+          },
+          "out": {
+            "position": { "name": "right" },
+            "attrs": {
+              "portBody": {
+                "magnet": true,
+                "r": 3,
+                "fill": "#fff",
+                "stroke": "#3199FF",
+                "strokeWidth": 1
+              }
+            }
+          }
+        }
+      },
+      "id": "f184dfd1-be4d-4fcd-9efd-b033209cbbc1",
+      "component": {
+        "key": null,
+        "ref": null,
+        "props": {},
+        "_owner": null,
+        "_store": {}
+      },
+      "data": { "value": "模型参数1", "type": "case", "initCom": true },
+      "zIndex": 5,
+      "parent": "42cc1d37-624b-4452-8ec4-cad793eab1fa"
+    },
+    {
+      "position": { "x": 450, "y": 150 },
+      "size": { "width": 154, "height": 44 },
+      "view": "react-shape-view",
+      "shape": "ais-rect-port",
+      "highlight": true,
+      "portMarkup": [{ "tagName": "circle", "selector": "portBody" }],
+      "ports": {
+        "items": [
+          {
+            "group": "in",
+            "id": "6239e950-0a1f-4ddf-a398-76d0c24f63ad"
+          },
+          {
+            "group": "out",
+            "id": "f84be50f-adfe-4394-aa25-8a8f6ec68c6d"
+          }
+        ],
+        "groups": {
+          "in": {
+            "position": { "name": "left" },
+            "attrs": {
+              "portBody": {
+                "magnet": "passive",
+                "r": 3,
+                "stroke": "#ffa940",
+                "fill": "#fff",
+                "strokeWidth": 1
+              }
+            }
+          },
+          "out": {
+            "position": { "name": "right" },
+            "attrs": {
+              "portBody": {
+                "magnet": true,
+                "r": 3,
+                "fill": "#fff",
+                "stroke": "#3199FF",
+                "strokeWidth": 1
+              }
+            }
+          }
+        }
+      },
+      "id": "2a67665f-dfef-4db7-a3ab-42e6ab105ca5",
+      "component": {
+        "key": null,
+        "ref": null,
+        "props": {},
+        "_owner": null,
+        "_store": {}
+      },
+      "data": { "value": "模型参数2", "type": "case", "initCom": true },
+      "zIndex": 6,
+      "parent": "42cc1d37-624b-4452-8ec4-cad793eab1fa"
+    },
+    {
+      "position": { "x": 960, "y": 100 },
+      "size": { "width": 154, "height": 44 },
+      "view": "react-shape-view",
+      "shape": "ais-rect-port",
+      "highlight": true,
+      "portMarkup": [{ "tagName": "circle", "selector": "portBody" }],
+      "ports": {
+        "items": [
+          {
+            "group": "in",
+            "id": "041a25da-f0c9-464c-bfb7-6e10acd3345d"
+          },
+          {
+            "group": "out",
+            "id": "5dc273e1-1afd-47e1-a5f1-db8401256049"
+          }
+        ],
+        "groups": {
+          "in": {
+            "position": { "name": "left" },
+            "attrs": {
+              "portBody": {
+                "magnet": "passive",
+                "r": 3,
+                "stroke": "#ffa940",
+                "fill": "#fff",
+                "strokeWidth": 1
+              }
+            }
+          },
+          "out": {
+            "position": { "name": "right" },
+            "attrs": {
+              "portBody": {
+                "magnet": true,
+                "r": 3,
+                "fill": "#fff",
+                "stroke": "#3199FF",
+                "strokeWidth": 1
+              }
+            }
+          }
+        }
+      },
+      "id": "d86914d3-8591-4a5e-8e93-ccb74333780d",
+      "component": {
+        "key": null,
+        "ref": null,
+        "props": {},
+        "_owner": null,
+        "_store": {}
+      },
+      "data": {
+        "type": "switch",
+        "props": {
+          "name": "消息调用",
+          "type": "switch",
+          "options": {
+            "defaultSize": { "width": 154, "height": 44 },
+            "defaultData": { "type": "switch" }
+          }
+        },
+        "group": "switch",
+        "initCom": true
+      },
+      "zIndex": 7
+    },
+    {
+      "position": { "x": 1440, "y": 110 },
+      "size": { "width": 154, "height": 44 },
+      "view": "react-shape-view",
+      "shape": "ais-rect-port",
+      "highlight": true,
+      "portMarkup": [{ "tagName": "circle", "selector": "portBody" }],
+      "ports": {
+        "items": [
+          {
+            "group": "in",
+            "id": "6986b4da-b8e7-4eec-9e5f-d214e6ac3456"
+          },
+          {
+            "group": "out",
+            "id": "10aaa6cd-4aa4-46ca-b430-47050bcd86c1"
+          }
+        ],
+        "groups": {
+          "in": {
+            "position": { "name": "left" },
+            "attrs": {
+              "portBody": {
+                "magnet": "passive",
+                "r": 3,
+                "stroke": "#ffa940",
+                "fill": "#fff",
+                "strokeWidth": 1
+              }
+            }
+          },
+          "out": {
+            "position": { "name": "right" },
+            "attrs": {
+              "portBody": {
+                "magnet": true,
+                "r": 3,
+                "fill": "#fff",
+                "stroke": "#3199FF",
+                "strokeWidth": 1
+              }
+            }
+          }
+        }
+      },
+      "id": "2b451eb6-186b-4563-862b-3dd1936f90f3",
+      "component": {
+        "key": null,
+        "ref": null,
+        "props": {},
+        "_owner": null,
+        "_store": {}
+      },
+      "data": {
+        "type": "model",
+        "props": {
+          "id": "id3",
+          "name": "告警1",
+          "value": ["告警参数1", "告警参数2"]
+        },
+        "group": "warn",
+        "initCom": true
+      },
+      "zIndex": 8,
+      "children": [
+        "1900d8d5-8336-4b8c-8d52-15f1446d65e7",
+        "e6eacc13-5b24-4118-ad76-c3ab6f28967e",
+        "9671022b-00af-4d60-a8ec-a5e831f88e24",
+        "326b8062-d5c6-484e-bdab-f8d427c5805f"
+      ]
+    },
+    {
+      "position": { "x": 1164, "y": 57 },
+      "size": { "width": 154, "height": 44 },
+      "view": "react-shape-view",
+      "shape": "ais-rect-port",
+      "highlight": true,
+      "portMarkup": [{ "tagName": "circle", "selector": "portBody" }],
+      "ports": {
+        "items": [
+          {
+            "group": "in",
+            "id": "b8f19a71-e8dc-4fc2-a47e-9ac2f3e5533d"
+          },
+          {
+            "group": "out",
+            "id": "a16dc289-942e-4c03-a84a-f9fe5c30f469"
+          }
+        ],
+        "groups": {
+          "in": {
+            "position": { "name": "left" },
+            "attrs": {
+              "portBody": {
+                "magnet": "passive",
+                "r": 3,
+                "stroke": "#ffa940",
+                "fill": "#fff",
+                "strokeWidth": 1
+              }
+            }
+          },
+          "out": {
+            "position": { "name": "right" },
+            "attrs": {
+              "portBody": {
+                "magnet": true,
+                "r": 3,
+                "fill": "#fff",
+                "stroke": "#3199FF",
+                "strokeWidth": 1
+              }
+            }
+          }
+        }
+      },
+      "id": "1900d8d5-8336-4b8c-8d52-15f1446d65e7",
+      "component": {
+        "key": null,
+        "ref": null,
+        "props": {},
+        "_owner": null,
+        "_store": {}
+      },
+      "data": { "value": "告警参数1", "type": "case", "initCom": true },
+      "zIndex": 9,
+      "parent": "2b451eb6-186b-4563-862b-3dd1936f90f3"
+    },
+    {
+      "position": { "x": 1164, "y": 163 },
+      "size": { "width": 154, "height": 44 },
+      "view": "react-shape-view",
+      "shape": "ais-rect-port",
+      "highlight": true,
+      "portMarkup": [{ "tagName": "circle", "selector": "portBody" }],
+      "ports": {
+        "items": [
+          {
+            "group": "in",
+            "id": "365706bf-ffa6-4541-9622-afa17200c24f"
+          },
+          {
+            "group": "out",
+            "id": "4265aeed-794e-4787-9034-273047743b2d"
+          }
+        ],
+        "groups": {
+          "in": {
+            "position": { "name": "left" },
+            "attrs": {
+              "portBody": {
+                "magnet": "passive",
+                "r": 3,
+                "stroke": "#ffa940",
+                "fill": "#fff",
+                "strokeWidth": 1
+              }
+            }
+          },
+          "out": {
+            "position": { "name": "right" },
+            "attrs": {
+              "portBody": {
+                "magnet": true,
+                "r": 3,
+                "fill": "#fff",
+                "stroke": "#3199FF",
+                "strokeWidth": 1
+              }
+            }
+          }
+        }
+      },
+      "id": "e6eacc13-5b24-4118-ad76-c3ab6f28967e",
+      "component": {
+        "key": null,
+        "ref": null,
+        "props": {},
+        "_owner": null,
+        "_store": {}
+      },
+      "data": { "value": "告警参数2", "type": "case", "initCom": true },
+      "zIndex": 10,
+      "parent": "2b451eb6-186b-4563-862b-3dd1936f90f3"
+    }
+  ]
+}
