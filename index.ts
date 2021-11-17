@@ -1,3 +1,3 @@
-import * as Scene from './src/pages/index';
+import Scene from './src/pages/index';
 
 export { Scene };

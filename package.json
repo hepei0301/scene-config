@@ -1,6 +1,6 @@
 {
     "name": "scene-config",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "scene project",
     "main": "./index.ts",
     "module": "./index.ts",
