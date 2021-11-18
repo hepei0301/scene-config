@@ -2,11 +2,11 @@ import React, { useEffect, useState } from 'react';
 import { Input, message } from 'antd';
 import _ from 'lodash';
 import { Toolbar } from '@antv/x6-react-components';
-import RowFlex from '@/component/RowFlex';
-import FlowGraph from '../Graph';
 import { DataUri } from '@antv/x6';
 import { ClearOutlined, SaveOutlined, UndoOutlined } from '@ant-design/icons';
 import '@antv/x6-react-components/es/toolbar/style/index.css';
+import RowFlex from '../../component/RowFlex';
+import FlowGraph from '../Graph';
 
 const Item = Toolbar.Item;
 const Group = Toolbar.Group;

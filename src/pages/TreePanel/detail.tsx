@@ -2,13 +2,13 @@ import { useState, useEffect } from 'react';
 import { Input, Tooltip } from 'antd';
 import _ from 'lodash';
 import useAsync from '@/hooks/useAsync';
-import { getDeviceList, getModelRuleList, getWarnList } from '@/services/dragService';
-import WithState from '@/component/WithState';
-import { buttonOptions } from '@/items/Button';
-import { inputOptions } from '@/items/Input';
-import { deviceOptions } from '@/items/Device';
-import { modelOptions } from '@/items/Model';
-import { newsOptions } from '@/items/News';
+import { getDeviceList, getModelRuleList, getNullParamPage } from '../../services/dragService';
+import WithState from '../../component/WithState';
+import { buttonOptions } from '../../items/Button';
+import { warnOptions } from '../../items/Warn';
+import { deviceOptions } from '../../items/Device';
+import { modelOptions } from '../../items/Model';
+import { newsOptions } from '../../items/News';
 import styles from './index.less';
 
 const { Search } = Input;
@@ -39,13 +39,13 @@ export default function Detail({ panelDetail, down }: any) {
         options: modelOptions,
       };
       break;
-    // case 'warn':
-    //   listState = useAsync(() => getWarnList({ name: value }), [value]);
-    //   parame = {
-    //     group: 'warn',
-    //     options: modelOptions,
-    //   };
-    //   break;
+    case 'warn':
+      listState = useAsync(() => getNullParamPage({ name: value, currentPage: 1, pageSize: 10000 }), [value]);
+      parame = {
+        group: 'warn',
+        options: warnOptions,
+      };
+      break;
     case 'switch':
       listState = { loading: false, value: panelDetail.children };
       parame = {

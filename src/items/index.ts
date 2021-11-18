@@ -65,7 +65,7 @@ export const itemPanelGroup: ItemPanelGroup[] = [
     layoutOptions: {
       columns: 2,
     },
-    children: [{ name: '规则模型1', type: 'warn', options: modelOptions }],
+    children: [{ name: '规则模型1', type: 'warn', options: warnOptions }],
   },
   //   {
   //     name: '输出设备',

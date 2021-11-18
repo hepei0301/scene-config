@@ -1,65 +1,69 @@
-import React, { useState, useEffect } from 'react';
-import { Button, InputNumber, Tooltip } from 'antd';
-import { Graph, Cell, Node, Color, Dom } from '@antv/x6';
-// import BaseInput from '@/baseItems/BaseInput';
-import AddCase from '@/expandItems/AddCase';
-import { PlusCircleOutlined } from '@ant-design/icons';
+import React, { useEffect, useState } from 'react';
+import _ from 'lodash';
+import { Cell } from '@antv/x6';
 import FlowGraph from '@/pages/Graph';
+import { caseOptions } from '../Case';
+import { layout } from '@/expandItems/AddCase/index';
 import styles from './index.less';
 
-export interface InputProps {
-  backgroundColor: string;
-  borderColor: string;
-  borderWidth: number;
-  color: string;
-  placeholder: string;
-  value: string;
+export interface WarnProps {
+  type: 'warn';
+  props: {
+    id: string;
+    name: string;
+  };
 }
 
-const caseList: string[] = ['case1', 'case2'];
-
 export default function Warn(props: any) {
-  //   const [selectId, setSelectId] = useState('');
   const { graph } = FlowGraph;
-  const defaultData = props.data.props;
+  const node = props.node;
+  const caseList = _.get(node, 'data.props.monitorParamList', []);
 
-  const createEdge = (target: Cell) => {
-    return graph.createEdge({
-      shape: 'edge',
-      source: { cell: selectId },
-      target: { cell: target.id },
-    });
-  };
-  const click = (e: any) => {
-    e.stopPropagation();
-    const member = graph.createNode({
-      x: 40,
-      y: 40,
-      width: 100,
-      height: 40,
-      shape: 'html',
-      html() {
-        const wrap = document.createElement('div');
-        wrap.style.width = '100%';
-        wrap.style.height = '100%';
-        wrap.style.background = '#f0f0f0';
-        wrap.style.display = 'flex';
-        wrap.style.justifyContent = 'center';
-        wrap.style.alignItems = 'center';
-
-        wrap.innerText = 'Hello';
-
-        return wrap;
+  const addCase = (item: any) => {
+    const caseNode = graph.createNode({
+      ...caseOptions.defaultSize,
+      shape: 'ais-rect-port',
+      component: <caseOptions.component />,
+      data: {
+        value: item,
+        type: 'case',
+        props: {
+          type: _.get(node, 'data.group', ''),
+          id: _.get(node, 'data.props.id'),
+        },
       },
     });
+
+    const createEdge = (source: Cell, target: Cell) => {
+      return graph.createEdge({
+        shape: 'edge',
+        source: { cell: source.id },
+        target: { cell: target.id },
+      });
+    };
     graph.freeze();
-    graph.addCell([member, createEdge(member)]);
+
+    graph.addCell([caseNode, createEdge(caseNode, node)]);
+
+    node.addChild(caseNode);
+
+    layout();
   };
+
+  useEffect(() => {
+    const nodes = graph.getNodes();
+    if (_.find(nodes, { id: node.id }) && !_.get(node, 'data.initCom', false)) {
+      caseList &&
+        caseList.forEach((item) => {
+          addCase(item);
+        });
+    }
+  }, []);
 
   return (
     <div className={styles.test}>
       <div className={styles.line}></div>
-      <span style={{ margin: '0 30px 0 6px' }}>#报警器#</span>
+      <div className={styles.parame}>#{_.get(node, 'data.props.name', '')}#</div>
     </div>
   );
 }

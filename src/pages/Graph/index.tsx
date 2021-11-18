@@ -1,9 +1,9 @@
 import { Graph, Addon, FunctionExt, Shape, Node, Platform, Dom, NodeView } from '@antv/x6';
 import '@antv/x6-react-shape';
 import './shape';
-import { itemPanelGroup } from '@/items';
+import { itemPanelGroup } from '../../items';
 import '../GraphCommon/connector';
-import CustomPort from '@/customPort';
+import CustomPort from '../../customPort';
 import _ from 'lodash';
 
 // 高亮

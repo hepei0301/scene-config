@@ -7,7 +7,7 @@ import '../reset.less';
 import '../global.less';
 import styles from './index.less';
 
-export default function Scene () {
+export default function () {
   const [isReady, setIsReady] = useState(false);
 
   const getContainerSize = () => {

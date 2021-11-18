@@ -8,7 +8,7 @@ export function getModelRuleList(parame: any) {
   return request.get('/api/models');
 }
 
-export function getWarnList(parame: any) {
+export function getNullParamPage(parame: any) {
   return request.get('/api/warns');
 }
 
