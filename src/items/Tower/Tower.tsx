@@ -1,4 +1,4 @@
-import AddCase from '@/expandItems/AddCase';
+import AddCase from '../../expandItems/AddCase';
 import styles from './index.less';
 
 export default function Tower(props: any) {

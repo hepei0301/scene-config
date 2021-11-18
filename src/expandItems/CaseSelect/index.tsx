@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Select } from 'antd';
 import { Graph, Cell, Node, Color, Dom } from '@antv/x6';
-import FlowGraph from '@/pages/Graph';
+import FlowGraph from '../../pages/Graph';
 import styles from './index.less';
 
 const { Option } = Select;

@@ -4,8 +4,8 @@ import { Button, Tooltip } from 'antd';
 import { Cell, Node } from '@antv/x6';
 import { PlusCircleOutlined } from '@ant-design/icons';
 import _ from 'lodash';
-import FlowGraph from '@/pages/Graph';
-import { caseOptions } from '@/items/Case';
+import FlowGraph from '../../pages/Graph';
+import { caseOptions } from '../../items/Case';
 import styles from './index.less';
 
 export interface CaseListProps {

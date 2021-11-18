@@ -3,7 +3,7 @@ import styles from './index.less';
 import _ from 'lodash';
 import { DownOutlined, UpOutlined } from '@ant-design/icons';
 import { Addon } from '@antv/x6';
-import FlowGraph from '@/pages/Graph';
+import FlowGraph from '../../pages/Graph';
 import RowFlex from '../../component/RowFlex';
 import { itemPanelGroup } from '../../items';
 import { Collapse } from 'antd';

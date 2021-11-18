@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Input, Tooltip } from 'antd';
 import _ from 'lodash';
-import useAsync from '@/hooks/useAsync';
+import useAsync from '../../hooks/useAsync';
 import { getDeviceList, getModelRuleList, getNullParamPage } from '../../services/dragService';
 import WithState from '../../component/WithState';
 import { buttonOptions } from '../../items/Button';

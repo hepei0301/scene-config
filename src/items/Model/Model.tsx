@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import _ from 'lodash';
 import { Cell } from '@antv/x6';
-import FlowGraph from '@/pages/Graph';
+import FlowGraph from '../../pages/Graph';
 import { caseOptions } from '../Case';
-import { layout } from '@/expandItems/AddCase/index';
+import { layout } from '../../expandItems/AddCase/index';
 import styles from './index.less';
 
 export interface ModelProps {

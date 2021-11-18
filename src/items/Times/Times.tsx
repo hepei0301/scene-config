@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { Button, InputNumber, Tooltip } from 'antd';
 import { Graph, Cell, Node, Color, Dom } from '@antv/x6';
-import TimeSwitch from '@/expandItems/TimeSwitch';
-import AddCase from '@/expandItems/AddCase';
-import AddLine from '@/expandItems/AddLine';
+import TimeSwitch from '../../expandItems/TimeSwitch';
+import AddCase from '../../expandItems/AddCase';
+import AddLine from '../../expandItems/AddLine';
 import { PlusCircleOutlined } from '@ant-design/icons';
 import FlowGraph from '@/pages/Graph';
 import RowFlex from '@/component/RowFlex';

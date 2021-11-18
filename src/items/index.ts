@@ -1,5 +1,5 @@
-import { registerComponent } from '@/editor/componentUtil';
-import type { ItemPanelItem } from '@/editor/ItemPanel';
+import { registerComponent } from '../editor/componentUtil';
+import type { ItemPanelItem } from '../editor/ItemPanel';
 import { buttonOptions } from './Button';
 import { inputOptions } from './Input';
 import { towerOptions } from './Tower';
