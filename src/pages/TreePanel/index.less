@@ -1,6 +1,6 @@
 @import (reference) '~antd/es/style/themes/default.less';
 
-.list {
+.treepanel-container {
   height: 100%;
   overflow-x: hidden;
   overflow-y: auto;
@@ -10,7 +10,13 @@
   padding: 0 15px;
   box-sizing: border-box;
 
-  .tree {
+  .ant-collapse {
+    background-color: white !important;
+    border: none !important;
+
+  }
+
+  .treepanel-tree {
     height: 100%;
     background-image: linear-gradient(#fff 50%, #f7f9fb 50%);
     background-size: 100% 60px;
@@ -68,17 +74,17 @@
       }
     }
   }
-}
 
-.panel {
-  display: flex;
-  flex-direction: column;
-}
+  .treepanel-panel {
+    display: flex;
+    flex-direction: column;
+  }
 
-:global {
+
   .ant-collapse-content-box {
     display: flex;
     flex-direction: column;
+    // border-bottom: 1px solid #f0f0f0;
     // justify-content: space-around;
   }
 
@@ -87,44 +93,60 @@
     padding-left: 0 !important;
     padding-right: 0 !important;
   }
-}
 
-.header {
-  font-size: 15px;
-  font-weight: bold;
-}
+  .ant-collapse-item {
+    border-bottom: none;
+  }
 
-.line {
-  width: 4px;
-  height: 16px;
-  background-color: red;
-  margin-right: 10px;
-}
+  .ant-collapse-content {
+    border-top: none !important;
+  }
 
-.search {
-  margin-bottom: 18px;
-}
+  .treepanel-header {
+    font-size: 15px;
+    font-weight: bold;
 
-.card {
-  flex: 1;
-}
+    h1 {
+      font-weight: 500 !important;
+      color: rgba(0, 0, 0, 0.85) !important;
+      font-size: 15px !important;
+      line-height: 0px !important;
+      margin-bottom: 0px;
+    }
+  }
 
-.itemDetail {
-  display: grid;
-  grid-row-gap: 6px;
-  grid-column-gap: 6px;
-  grid-template-columns: repeat(3, 1fr);
-}
-.item {
-  height: 30px;
-  padding: 0 4px;
-  border: 1px solid gray;
-  box-sizing: border-box;
-  line-height: 30px;
-  text-align: center;
-  font-size: 8px;
-  border-radius: 4px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  .treepanel-line {
+    width: 4px;
+    height: 16px;
+    margin-right: 10px;
+  }
+
+  .search {
+    margin-bottom: 18px;
+  }
+
+  .card {
+    flex: 1;
+  }
+
+  .itemDetail {
+    display: grid;
+    grid-row-gap: 6px;
+    grid-column-gap: 6px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .item {
+    height: 30px;
+    padding: 0 4px;
+    border: 1px solid gray;
+    box-sizing: border-box;
+    line-height: 30px;
+    text-align: center;
+    font-size: 8px;
+    border-radius: 4px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
 }

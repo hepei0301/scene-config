@@ -42,8 +42,6 @@ export const layout = () => {
     const sourceBBox = source.getBBox();
     const targetBBox = target.getBBox();
 
-    console.log(sourceBBox, targetBBox);
-
     if ((dir === 'LR' || dir === 'RL') && sourceBBox.y !== targetBBox.y) {
       const gap = dir === 'LR' ? targetBBox.x - sourceBBox.x - sourceBBox.width : -sourceBBox.x + targetBBox.x + targetBBox.width;
       const fix = dir === 'LR' ? sourceBBox.width : 0;

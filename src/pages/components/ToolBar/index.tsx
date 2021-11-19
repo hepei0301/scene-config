@@ -22,7 +22,6 @@ export default function () {
   const [canRedo, setCanRedo] = useState(false);
 
   const copy = () => {
-    console.log(11133);
     const { graph } = FlowGraph;
     const cells = graph.getSelectedCells();
     if (cells.length) {

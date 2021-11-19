@@ -1,3 +1,4 @@
+import React from 'react';
 import RowFlex from './RowFlex';
 
 export interface EmptyBlockProps {

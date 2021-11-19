@@ -4,7 +4,7 @@ import { Cell } from '@antv/x6';
 import FlowGraph from '../../pages/Graph';
 import { caseOptions } from '../Case';
 import { layout } from '../../expandItems/AddCase/index';
-import styles from './index.less';
+import './index.less';
 
 export interface WarnProps {
   type: 'warn';
@@ -61,9 +61,9 @@ export default function Warn(props: any) {
   }, []);
 
   return (
-    <div className={styles.test}>
-      <div className={styles.line}></div>
-      <div className={styles.parame}>#{_.get(node, 'data.props.name', '')}#</div>
+    <div className="item-warn">
+      <div className="item-warn-line"></div>
+      <div className="item-warn-parame">#{_.get(node, 'data.props.name', '')}#</div>
     </div>
   );
 }

@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import _ from 'lodash';
 import { CaseListProps } from '../../expandItems/AddCase';
-import styles from './index.less';
+import './index.less';
 export interface CaseProps {
   value: CaseListProps;
 }
@@ -28,9 +28,9 @@ export default function Case(props: any) {
   }
 
   return (
-    <div className={styles.test}>
-      <span className={styles.line} style={{ background: color[node.data.props.type] }}></span>
-      <div className={styles.parame}>#{name}#</div>
+    <div className="item-case">
+      <span className="item-case-line" style={{ background: color[node.data.props.type] }}></span>
+      <div className="item-case-parame">#{name}#</div>
     </div>
   );
 }

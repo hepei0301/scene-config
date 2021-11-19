@@ -16,7 +16,6 @@ interface Props {
 const InnerNodeTitle = (props: Props) => {
   const { node = {}, searchKey = '', connectDragPreview, connectDragSource } = props;
   const { name = '', isDir } = node;
-  console.log('none', node);
   const [visible, setVisible] = useState<boolean>(false);
   const onMouseIn = useCallback(() => {
     setVisible(true);

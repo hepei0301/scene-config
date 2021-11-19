@@ -6,7 +6,7 @@ import { PlusCircleOutlined } from '@ant-design/icons';
 import _ from 'lodash';
 import FlowGraph from '../../pages/Graph';
 import { caseOptions } from '../../items/Case';
-import styles from './index.less';
+import './index.less';
 
 export interface CaseListProps {
   parameterKey?: string;
@@ -88,6 +88,9 @@ export default function AddCase({ caseList = [], sourceData }: AddCaseProps) {
   const { graph } = FlowGraph;
   const [selectCell, setSelectCell] = useState<Cell | null>(null);
   const [visible, setVisible] = useState(false);
+  const mouseDownHandle = () => {
+    visible && setVisible(false);
+  };
 
   useEffect(() => {
     graph.on('node:click', ({ cell }) => {
@@ -95,8 +98,11 @@ export default function AddCase({ caseList = [], sourceData }: AddCaseProps) {
     });
   }, []);
 
+  useEffect(() => {
+    document.addEventListener('click', mouseDownHandle);
+  }, [visible]);
+
   const click = (v: string) => {
-    setVisible(false);
     const caseNode = graph.createNode({
       ...caseOptions.defaultSize,
       shape: 'ais-rect-port',
@@ -122,15 +128,21 @@ export default function AddCase({ caseList = [], sourceData }: AddCaseProps) {
     }
   };
 
+  useEffect(() => {
+    return () => {
+      document.removeEventListener('click', mouseDownHandle);
+    };
+  }, []);
+
   return (
     <Tooltip
       placement="rightTop"
       color="#EBE2D6"
       trigger="hover"
       visible={visible}
-      overlayClassName={styles.tip}
+      overlayClassName="addcase-tip"
       title={
-        <div className={styles.case}>
+        <div className="add-case">
           {_.isArray(caseList) &&
             caseList.map((v, i) => {
               return (
@@ -142,7 +154,13 @@ export default function AddCase({ caseList = [], sourceData }: AddCaseProps) {
         </div>
       }>
       {_.isArray(caseList) && !_.isEmpty(caseList) && (
-        <PlusCircleOutlined style={{ fontSize: 18, color: '#008dff', cursor: 'pointer' }} onClick={() => setVisible(!visible)} />
+        <PlusCircleOutlined
+          style={{ fontSize: 18, color: '#008dff', cursor: 'pointer' }}
+          onClick={(e) => {
+            setVisible(!visible);
+            e.stopPropagation();
+          }}
+        />
       )}
     </Tooltip>
   );

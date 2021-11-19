@@ -1,121 +1,52 @@
 @import (reference) '~antd/es/style/themes/default.less';
 
-.list {
-  height: 100%;
-  overflow-x: hidden;
-  overflow-y: auto;
-  background: #fff;
-  border-top: 1px solid rgba(0, 0, 0, 0.08);
-  box-sizing: border-box;
-  padding: 0 15px;
-  box-sizing: border-box;
-
-  .tree {
-    height: 100%;
-    background-image: linear-gradient(#fff 50%, #f7f9fb 50%);
-    background-size: 100% 60px;
-
-    .treeFolder:global(.@{ant-prefix}-tree-treenode) {
-      align-items: center;
-      height: 30px;
-      padding: 0;
-      font-size: 12px;
-      line-height: 30px;
-
-      &::before {
-        height: 30px;
-      }
-
-      :global {
-        .@{ant-prefix}-tree-iconEle.@{ant-prefix}-tree-icon__customize {
-          width: auto;
-          margin-right: 8px;
-          color: rgba(0, 0, 0, 0.45);
-        }
-
-        .@{ant-prefix}-tree-node-content-wrapper {
-          display: flex;
-          align-items: center;
-          padding-left: 0;
-
-          .@{ant-prefix}-tree-title {
-            flex-grow: 1;
-          }
-        }
-      }
-    }
-
-    .treeNode:global(.@{ant-prefix}-tree-treenode) {
-      height: 30px;
-      line-height: 30px;
-
-      &::before {
-        height: 30px;
-      }
-
-      :global {
-        .@{ant-prefix}-tree-node-content-wrapper {
-          padding: 0;
-        }
-
-        .@{ant-prefix}-tree-iconEle.@{ant-prefix}-tree-icon__customize {
-          display: none;
-        }
-
-        .@{ant-prefix}-tree-switcher {
-          display: none;
-        }
-      }
-    }
-  }
-}
-
-.item {
-  width: 55px;
-  height: 55px;
-  border: 1px solid gray;
-  line-height: 55px;
-  text-align: center;
-  margin-right: 25px;
-  font-size: 12px;
-  border-radius: 4px;
-}
-
-.panel {
+.treepanel-detail-panel {
   display: flex;
   flex-direction: column;
 }
 
-:global {
-  .ant-collapse-content-box {
-    display: flex;
-    flex-direction: column;
-    // justify-content: space-around;
-  }
-  .ant-collapse-header {
-    border-bottom: 1px solid #f0f0f0 !important;
-    padding-left: 0 !important;
-    padding-right: 0 !important;
-  }
-}
-
-.header {
+.treepanel-detail-header {
   font-size: 15px;
   font-weight: bold;
 }
-.line {
+
+.treepanel-detail-line {
   width: 4px;
   height: 16px;
   background-color: red;
   margin-right: 10px;
 }
-.itemBox {
+
+.treepanel-detail-itemBox {
   display: flex;
   flex-direction: row;
 }
-.search {
+
+.treepanel-detail-cards {
+  width: 100%;
+}
+
+.treepanel-detail-item {
+  height: 30px;
+  padding: 0 4px;
+  border: 1px solid gray;
+  box-sizing: border-box;
+  line-height: 30px;
+  text-align: center;
+  font-size: 8px;
+  border-radius: 4px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.treepanel-detail-search {
   margin-bottom: 18px;
 }
-.cards {
-  width: 100%;
+
+.treepanel-detail-itemDetail {
+  display: grid;
+  grid-row-gap: 6px;
+  grid-column-gap: 6px;
+  grid-template-columns: repeat(3, 1fr);
 }

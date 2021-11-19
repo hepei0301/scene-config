@@ -20,7 +20,6 @@ const FolderIcon = ({ expanded }: { expanded: boolean }) => {
 
 export const ComponentTree = () => {
   const { componentTreeNodes, loadComponentNodes } = useModel('guide-algo-component');
-  console.log('1111', componentTreeNodes, loadComponentNodes);
   useMount(() => {
     loadComponentNodes();
   });
@@ -39,15 +38,7 @@ export const ComponentTree = () => {
         );
       }
 
-      return (
-        <TreeNode
-          isLeaf={true}
-          key={key}
-          icon={<span />}
-          title={title}
-          className={styles.treeNode}
-        />
-      );
+      return <TreeNode isLeaf={true} key={key} icon={<span />} title={title} className={styles.treeNode} />;
     });
   }, []);
 

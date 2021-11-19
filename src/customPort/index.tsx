@@ -76,7 +76,7 @@ CustomPort.config({
         attrs: {
           portBody: {
             magnet: 'passive',
-            r: 3,
+            r: 5,
             stroke: '#ffa940',
             fill: '#fff',
             strokeWidth: 1,
@@ -90,7 +90,7 @@ CustomPort.config({
         attrs: {
           portBody: {
             magnet: true,
-            r: 3,
+            r: 5,
             fill: '#fff',
             stroke: '#3199FF',
             strokeWidth: 1,

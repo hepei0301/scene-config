@@ -1,3 +1,4 @@
+import React from 'react';
 import { Graph, Addon, FunctionExt, Shape, Node, Platform, Dom, NodeView } from '@antv/x6';
 import '@antv/x6-react-shape';
 import './shape';
@@ -21,7 +22,7 @@ export default class FlowGraph {
   public static graph: Graph;
   private static stencil: Addon.Stencil;
 
-  public static init() {
+  public static init(sourceData: any) {
     const that = this;
     this.graph = new Graph({
       container: document.getElementById('container')!,
@@ -31,7 +32,6 @@ export default class FlowGraph {
       onPortRendered(args) {
         const contentSelectors = args.contentSelectors;
         const container = contentSelectors && contentSelectors.content;
-        console.log(contentSelectors, '111: ', container, 'contentSelectors');
         if (container) {
           //   ReactDOM.render(
           //       <div className="my-port" />,
@@ -131,19 +131,18 @@ export default class FlowGraph {
         enabled: true,
       },
     });
-    this.initGraphShape();
+    this.initGraphShape(sourceData);
     this.initEvent();
     return this.graph;
   }
 
-  private static initGraphShape() {
-    const { graph } = this;
-    const aa = sessionStorage.getItem('ant-data');
-    const bb = aa ? JSON.parse(aa) : { cells: [] };
+  private static initGraphShape(sourceData: any) {
+    const jsonData = _.get(sourceData, 'jsonData', null);
+    const pageData = jsonData ? JSON.parse(jsonData) : { cells: [] };
     let nodes: any[] = [];
     let edges: any[] = [];
-    _.isArray(bb.cells) &&
-      bb.cells.forEach((element: any) => {
+    _.isArray(pageData.cells) &&
+      pageData.cells.forEach((element: any) => {
         if (element.shape === 'ais-rect-port') {
           let option: any = null;
           itemPanelGroup.forEach((v) => {
@@ -155,7 +154,6 @@ export default class FlowGraph {
           });
 
           if (option) {
-            console.log(555, option, option.options.component);
             const node = {
               ...element,
               data: {
@@ -186,7 +184,6 @@ export default class FlowGraph {
     const { graph } = this;
     const container = document.getElementById('container')!;
     container.style.width = '100%';
-    console.log(10, container.style.width);
     const ports = container.querySelectorAll('.x6-port-body') as NodeListOf<SVGAElement>;
     this.showPorts(ports, false);
     graph.on('node:contextmenu', ({ cell, view }) => {

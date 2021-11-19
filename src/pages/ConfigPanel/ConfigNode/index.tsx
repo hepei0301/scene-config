@@ -6,12 +6,7 @@ import DetailPanelContainer from './DetailPanelContainer';
 import DetailPanelDefault from './DetailPanelDefault';
 import type { PanelChangeHandler } from './Helpers';
 import { getComponent } from '@/editor/componentUtil';
-import type {
-  ComponentOptions,
-  ComponentEditableData,
-  ComponentData,
-  CompositeData,
-} from '@/editor/type';
+import type { ComponentOptions, ComponentEditableData, ComponentData, CompositeData } from '@/editor/type';
 
 export interface DetailPanelContainerProps<T = any> {
   data: T;
@@ -48,7 +43,6 @@ export default function (props: IProps) {
       setDetailPanel(cell.data.detailPanel);
       //   const { detailPanel } = getComponent(cell?.type) as ComponentOptions;
       setDefaultData(cell.data.defaultData);
-      console.log('设置属性节点---》', cell);
       cellRef.current = cell;
       //   setAttrs({
       //     stroke: cell.attr('body/stroke'),
@@ -65,22 +59,17 @@ export default function (props: IProps) {
       ...prev,
       [prop]: value,
     }));
-
-    console.log(prop, value);
   };
 
   useEffect(() => {
     if (defaultData) {
       const data: object = cellRef.current!.getData();
       const newData = { ...data, defaultData };
-      console.log(8888, newData, defaultData, cellRef);
       cellRef.current!.setData(newData);
       // FlowGraph.updateExperimentGraph([defaultData])
     }
     // defaultData && cellRef.current!.data('defaultData', defaultData)
   }, [defaultData]);
-
-  console.log(1111, defaultData, detailPanel);
 
   return (
     <div>

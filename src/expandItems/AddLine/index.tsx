@@ -25,7 +25,6 @@ export default function AddCase({ color }: IineProps) {
   const [selectNode, setSelectNode] = useState<any>(null);
 
   const click = () => {
-    console.log('包围', selectNode);
     if (selectNode) {
       selectNode.attr('body/magnet', true);
     }
@@ -33,7 +32,6 @@ export default function AddCase({ color }: IineProps) {
 
   useEffect(() => {
     graph.on('node:click', ({ cell }) => {
-      console.log(888, cell);
       setSelectNode(cell);
     });
   }, []);
@@ -41,7 +39,6 @@ export default function AddCase({ color }: IineProps) {
   useEffect(() => {
     graph.bindKey('Ctrl', () => {
       if (source) {
-        console.log(6666555, source);
         source.attr('body/magnet', true);
       }
     });

@@ -23,18 +23,13 @@ export interface DetailPanelDefaultProps {
 }
 
 function DetailPanelDefault({ groups, data, onChange, children }: DetailPanelDefaultProps) {
-    console.log(groups, data, children)
   return (
-    <Collapse
-      className="pe-detail-panel"
-      style={{ border: 0 }}
-      activeKey={groups.map((v, i) => String(i))}>
+    <Collapse className="pe-detail-panel" style={{ border: 0 }} activeKey={groups.map((v, i) => String(i))}>
       {groups.map((group, i) => {
         return (
           <Panel header={group.title} key={String(i)}>
             {group.list.map(({ type, title, prop, ...rest }) => {
               const com = typeof type === 'string' ? itemMap[type] : type;
-              console.log(12212121, group, com, type)
               return React.createElement(com, {
                 ...rest,
                 key: prop,

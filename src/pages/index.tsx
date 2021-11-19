@@ -1,13 +1,14 @@
-import { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button } from 'antd';
 import FlowGraph from './Graph';
 import ToolBar from './ToolBar';
 import TreePanel from './TreePanel';
 import '../reset.less';
 import '../global.less';
-import styles from './index.less';
+import './index.less';
 
-export default function () {
+export default function Scene(props: any) {
+  const { sourceData, goBack } = props;
   const [isReady, setIsReady] = useState(false);
 
   const getContainerSize = () => {
@@ -18,7 +19,7 @@ export default function () {
   };
 
   useEffect(() => {
-    const graph = FlowGraph.init();
+    const graph = FlowGraph.init(sourceData);
     setIsReady(true);
 
     const resizeFn = () => {
@@ -34,20 +35,23 @@ export default function () {
   }, []);
 
   return (
-    <div className={styles.wrap}>
-      <div className={styles.header}>
+    <div className="scene-wrap" style={{ pointerEvents: sourceData.type !== 'view' ? 'auto' : 'none' }}>
+      <div className="scene-header">
         <span>应用场景配置</span>
-        <Button size="middle" onClick={() => console.log('我现在要返回界面去了啊')}>
+        <Button
+          onClick={() => {
+            goBack && goBack();
+          }}>
           返回
         </Button>
       </div>
-      <div className={styles.content}>
-        <div className={styles.sider}>
-          <TreePanel />
+      <div className="scene-content">
+        <div className="scene-sider">
+          <TreePanel {...props} />
         </div>
-        <div className={styles.panel}>
-          <div className={styles.toolbar}>{isReady && <ToolBar />}</div>
-          <div id="container" className={styles.container} />
+        <div className="scene-panel">
+          <div className="scene-toolbar">{isReady && sourceData.type !== 'view' && <ToolBar {...props} />}</div>
+          <div id="container" className="scene-container" />
         </div>
       </div>
     </div>

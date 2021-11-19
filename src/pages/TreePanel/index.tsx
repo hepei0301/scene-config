@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react';
-import styles from './index.less';
 import _ from 'lodash';
-import { DownOutlined, UpOutlined } from '@ant-design/icons';
+import { DownOutlined, PropertySafetyFilled, UpOutlined } from '@ant-design/icons';
 import { Addon } from '@antv/x6';
 import FlowGraph from '../../pages/Graph';
 import RowFlex from '../../component/RowFlex';
 import { itemPanelGroup } from '../../items';
 import { Collapse } from 'antd';
 import Detail from './detail';
+import './index.less';
 
 const { Panel } = Collapse;
 
@@ -19,7 +19,7 @@ const color = {
   输出设备: '#faad14',
 };
 
-export default function () {
+export default function (props: any) {
   const { graph } = FlowGraph;
 
   const dnd = new Addon.Dnd({
@@ -39,15 +39,15 @@ export default function () {
 
   const header = (item: any) => {
     return (
-      <RowFlex align="middle" className={styles.header}>
-        <div className={styles.line} style={{ background: color[item.name] }} />
+      <RowFlex align="middle" className="treepanel-header">
+        <div className="treepanel-line" style={{ background: color[item.name] }} />
         <h1>{item.name}</h1>
       </RowFlex>
     );
   };
 
   return (
-    <div className={styles.list}>
+    <div className="treepanel-container">
       <Collapse
         ghost
         defaultActiveKey={itemPanelGroup.map((v, i) => v.name)}
@@ -56,8 +56,8 @@ export default function () {
           return panelProps.isActive ? <UpOutlined /> : <DownOutlined />;
         }}>
         {itemPanelGroup.map((item, i) => (
-          <Panel header={header(item)} key={item.name} className={styles.panel}>
-            <Detail panelDetail={item} down={down} />
+          <Panel header={header(item)} key={item.name} className="treepanel-panel">
+            <Detail panelDetail={item} down={down} {...props} />
           </Panel>
         ))}
       </Collapse>

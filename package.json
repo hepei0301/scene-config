@@ -1,6 +1,6 @@
 {
     "name": "scene-config",
-    "version": "1.0.6",
+    "version": "1.1.40",
     "author": "hepei",
     "description": "scene project",
     "main": "./index.ts",
@@ -10,30 +10,22 @@
     "files": [
         "public",
         "src",
-        "index.ts",
-        "tsconfig.json"
+        "index.ts"
     ],
     "repository": {
         "type": "git",
         "url": "https://github.com/hepei0301/scene-config.git"
     },
     "scripts": {
-        "start": "umi dev",
-        "build": "umi build",
-        "postinstall": "umi generate tmp",
-        "prettier": "prettier --write '**/*.{js,jsx,tsx,ts,less,md,json}'",
-        "test": "umi-test",
-        "test:coverage": "umi-test --coverage"
+        "format": "prettier --write src/**/* test/**/*"
     },
     "gitHooks": {
         "pre-commit": "lint-staged"
     },
     "lint-staged": {
-        "*.{js,jsx,less,md,json}": [
-            "prettier --write"
-        ],
-        "*.ts?(x)": [
-            "prettier --parser=typescript --write"
+        "**/*.{ts,tsx}": [
+            "prettier --write",
+            "git add"
         ]
     },
     "dependencies": {
@@ -44,7 +36,8 @@
         "@antv/x6-react-shape": "^1.4.1",
         "@types/dompurify": "^2.0.4",
         "@types/lodash": "^4.14.170",
-        "@umijs/preset-react": "1.x",
+        "react": "17.x",
+        "react-dom": "17.x",
         "ahooks": "^2.10.6",
         "antd": "^4.16.1",
         "axios": "^0.24.0",
@@ -57,20 +50,19 @@
         "moment": "^2.29.1",
         "react-dnd": "^14.0.2",
         "react-dnd-html5-backend": "^11.1.3",
-        "react-use": "^17.3.1",
-        "umi": "^3.5.2",
-        "umi-lint": "^2.0.2"
+        "react-use": "^17.3.1"
     },
     "devDependencies": {
+        "umi": "^3.5.2",
+        "umi-lint": "^2.0.2",
+        "@umijs/preset-react": "1.x",
         "@types/dagre": "^0.7.46",
         "@types/lodash-es": "^4.17.5",
         "@types/react": "^17.0.0",
-        "@types/react-dom": "^17.0.0",
+        "@types/react-dom": "^17.0.0",    
         "@umijs/test": "^3.4.25",
         "lint-staged": "^10.0.7",
         "prettier": "^2.2.0",
-        "react": "17.x",
-        "react-dom": "17.x",
         "typescript": "^4.1.2",
         "yorkie": "^2.0.0"
     },

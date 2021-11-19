@@ -24,7 +24,6 @@ function DetailPanelContainer({ data, detailPanel, path }: DetailPanelContainerP
 
   const handleChange: PanelChangeHandler = ({ prop, value, history = true }) => {
     execCommand(history ? 'update' : 'updateWithoutHistory', (item: any) => {
-      console.log('改变属性值', item);
       const key = path ? `${path}.data.${prop}` : `data.${prop}`;
     });
   };

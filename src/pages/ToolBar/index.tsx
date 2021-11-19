@@ -6,16 +6,17 @@ import { DataUri } from '@antv/x6';
 import { ClearOutlined, SaveOutlined, UndoOutlined } from '@ant-design/icons';
 import '@antv/x6-react-components/es/toolbar/style/index.css';
 import RowFlex from '../../component/RowFlex';
+import { layout } from '../../expandItems/AddCase/index';
 import FlowGraph from '../Graph';
 
 const Item = Toolbar.Item;
 const Group = Toolbar.Group;
 
-export default function () {
+export default function (props: any) {
   const [canUndo, setCanUndo] = useState(false);
   const [canRedo, setCanRedo] = useState(false);
-  const [projectName, setProjectName] = useState('');
-  const [des, setDes] = useState('');
+  const [projectName, setProjectName] = useState(_.get(props, 'sourceData.name', ''));
+  const [des, setDes] = useState(_.get(props, 'sourceData.describe', ''));
 
   const copy = () => {
     const { graph } = FlowGraph;
@@ -58,7 +59,6 @@ export default function () {
     graph.bindKey(['meta+z', 'ctrl+z'], () => {
       graph.undo();
       if (history.canUndo()) {
-        console.log(99299, history);
         history.undo();
       }
       return false;
@@ -91,6 +91,9 @@ export default function () {
       const cells = graph.getSelectedCells();
       if (cells.length) {
         graph.removeCells(cells);
+        if (cells.some((item) => _.get(item, 'data.type', '') === 'case')) {
+          layout();
+        }
       }
       return false;
     });
@@ -110,13 +113,12 @@ export default function () {
         break;
       case 'save':
         message.destroy();
-        // if (_.isEmpty(projectName)) {
-        //   message.warn('请输入名称');
-        //   return;
-        // }
+        if (_.isEmpty(projectName)) {
+          message.warn('请输入名称');
+          return;
+        }
         const data = graph.toJSON();
         const formatData: any[] = [];
-        console.log(99999, data);
         if (data.cells && Array.isArray(data.cells)) {
           data.cells.forEach((v) => {
             if (v.shape === 'ais-rect-port') {
@@ -132,33 +134,26 @@ export default function () {
             } else {
               formatData.push(v);
             }
-            // if (v.shape === 'edge') {
-            //   formatData.push({
-            //     id: v.id,
-            //     zIndex: v.zIndex,
-            //     shape: v.shape,
-            //     data: v.attrs?.line,
-            //     source: v.source,
-            //     target: v.target,
-            //   });
-            // }
-            // if (v.shape === 'org-edge') {
-            //     formatData.push({
-            //       id: v.id,
-            //       zIndex: v.zIndex,
-            //       shape: v.shape,
-            //       data: v.attrs?.line,
-            //       source: v.source,
-            //       target: v.target,
-            //     });
-            //   }
           });
         }
-        console.log(444, JSON.stringify(data));
-        sessionStorage.setItem('ant-data', JSON.stringify(data));
-        // graph.toPNG((datauri: string) => {
-        //   DataUri.downloadDataUri(datauri, 'chart.png')
-        // })
+        if (props.saveScene) {
+          const sourceData = props.sourceData;
+          props
+            .saveScene({
+              id: sourceData.id || '',
+              name: projectName,
+              describe: des,
+              status: '',
+              jsonData: JSON.stringify(data),
+            })
+            .then((res: any) => {
+              if (res.code === '500') {
+                message.warn(res.message);
+              } else {
+                message.info(res.message);
+              }
+            });
+        }
         break;
       case 'print':
         graph.printPreview();
