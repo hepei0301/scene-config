@@ -35,7 +35,7 @@ export default function Scene(props: any) {
   }, []);
 
   return (
-    <div className="scene-wrap" style={{ pointerEvents: sourceData.type !== 'view' ? 'auto' : 'none' }}>
+    <div className="scene-wrap">
       <div className="scene-header">
         <span>应用场景配置</span>
         <Button
@@ -49,8 +49,8 @@ export default function Scene(props: any) {
         <div className="scene-sider">
           <TreePanel {...props} />
         </div>
-        <div className="scene-panel">
-          <div className="scene-toolbar">{isReady && sourceData.type !== 'view' && <ToolBar {...props} />}</div>
+        <div className="scene-panel" style={{ pointerEvents: sourceData?.type !== 'view' ? 'auto' : 'none' }}>
+          <div className="scene-toolbar">{isReady && sourceData?.type !== 'view' && <ToolBar {...props} />}</div>
           <div id="container" className="scene-container" />
         </div>
       </div>

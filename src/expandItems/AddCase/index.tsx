@@ -155,7 +155,7 @@ export default function AddCase({ caseList = [], sourceData }: AddCaseProps) {
       }>
       {_.isArray(caseList) && !_.isEmpty(caseList) && (
         <PlusCircleOutlined
-          style={{ fontSize: 18, color: '#008dff', cursor: 'pointer' }}
+          style={{ fontSize: 18, color: '#008dff', cursor: 'pointer', marginLeft: 10 }}
           onClick={(e) => {
             setVisible(!visible);
             e.stopPropagation();

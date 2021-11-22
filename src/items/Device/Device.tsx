@@ -9,7 +9,7 @@ export default function Device(props: any) {
   return (
     <div className="item-device">
       <div className="item-device-line"></div>
-      <span style={{ margin: '0 30px 0 6px' }}>#{deviceProps.name}#</span>
+      <div className="item-device-parame">#{deviceProps.name}#</div>
 
       <AddCase caseList={deviceProps.datasourcePara} sourceData={{ id: deviceProps.id, type: 'device' }} />
     </div>
