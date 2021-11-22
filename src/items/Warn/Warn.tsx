@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import _ from 'lodash';
 import { Cell } from '@antv/x6';
 import FlowGraph from '../../pages/Graph';
-import { caseOptions } from '../Case';
+import { nullCaseOptions } from '../NullCase';
 import { layout } from '../../expandItems/AddCase/index';
 import './index.less';
 
@@ -21,12 +21,15 @@ export default function Warn(props: any) {
 
   const addCase = (item: any) => {
     const caseNode = graph.createNode({
-      ...caseOptions.defaultSize,
+      ...nullCaseOptions.defaultSize,
       shape: 'ais-rect-port',
-      component: <caseOptions.component />,
+      component: <nullCaseOptions.component />,
       data: {
-        value: item,
-        type: 'case',
+        value: {
+          ...item,
+          key: '',
+        },
+        type: 'nullCase',
         props: {
           type: _.get(node, 'data.group', ''),
           id: _.get(node, 'data.props.id'),
@@ -63,7 +66,7 @@ export default function Warn(props: any) {
   return (
     <div className="item-warn">
       <div className="item-warn-line"></div>
-      <div className="item-warn-parame">#{_.get(node, 'data.props.name', '')}#</div>
+      <div className="item-warn-parame">{_.get(node, 'data.props.name', '')}</div>
     </div>
   );
 }

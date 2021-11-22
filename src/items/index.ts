@@ -9,7 +9,7 @@ import { warnOptions } from './Warn';
 import { caseOptions } from './Case';
 import { deviceOptions } from './Device';
 import { modelOptions } from './Model';
-import { cloneWith } from 'lodash';
+import { nullCaseOptions } from './NullCase';
 
 interface ItemPanelGroup {
   name: string;
@@ -34,6 +34,7 @@ export const itemPanelGroup: ItemPanelGroup[] = [
       //   { name: '按3钮', type: 'device', options: deviceOptions },
       { name: '设备', type: 'device', options: deviceOptions },
       { name: '参数', type: 'case', options: caseOptions },
+      { name: '空参数', type: 'nullCase', options: nullCaseOptions },
     ],
   },
   {

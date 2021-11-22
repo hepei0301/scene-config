@@ -30,7 +30,7 @@ export default function Case(props: any) {
   return (
     <div className="item-case">
       <span className="item-case-line" style={{ background: color[node.data.props.type] }}></span>
-      <div className="item-case-parame">#{name}#</div>
+      <div className="item-case-parame">{name}</div>
     </div>
   );
 }
