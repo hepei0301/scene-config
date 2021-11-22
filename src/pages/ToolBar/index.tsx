@@ -151,6 +151,11 @@ export default function (props: any) {
                 message.warn(res.message);
               } else {
                 message.info(res.message);
+                setTimeout(() => {
+                  if (props?.goBack) {
+                    props.goBack();
+                  }
+                }, 500);
               }
             });
         }
@@ -175,7 +180,7 @@ export default function (props: any) {
   return (
     <>
       <div>
-        <Toolbar hoverEffect={true} size="small" onClick={handleClick}>
+        <Toolbar hoverEffect={true} size="small" onClick={(item) => _.debounce(handleClick, item === 'save' ? 3500 : 0)}>
           <Group>
             <Item name="delete" icon={<ClearOutlined />} tooltip="清除 (Cmd + D, Ctrl + D)" />
           </Group>
