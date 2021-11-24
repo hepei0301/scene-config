@@ -36,7 +36,7 @@ export default function Detail({ panelDetail, down, getDeviceList, getModelRuleL
       break;
     case 'model':
       if (getModelRuleList) {
-        listState = useAsync(() => getModelRuleList({ name: value }), [value]);
+        listState = useAsync(() => getModelRuleList({ ruleName: value }), [value]);
       }
       parame = {
         group: 'model',

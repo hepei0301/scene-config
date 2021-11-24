@@ -180,7 +180,7 @@ export default function (props: any) {
   return (
     <>
       <div>
-        <Toolbar hoverEffect={true} size="small" onClick={(item) => _.debounce(handleClick, item === 'save' ? 3500 : 0)}>
+        <Toolbar hoverEffect={true} size="small" onClick={handleClick}>
           <Group>
             <Item name="delete" icon={<ClearOutlined />} tooltip="清除 (Cmd + D, Ctrl + D)" />
           </Group>
